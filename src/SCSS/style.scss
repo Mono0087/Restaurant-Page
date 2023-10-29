@@ -1,0 +1,39 @@
+@import "./reset.css";
+@import "config";
+@import "fonts";
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: $bg-main;
+  font-family: "Poppins", sans-serif;
+  color: $main-color;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+p {
+  margin: 0;
+}
+button,
+a {
+  transition: all 0.1s;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
