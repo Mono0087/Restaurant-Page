@@ -1,4 +1,4 @@
-import { run } from "./app/app";
+import { loadHeader } from "./app/header";
 import "./SCSS/style.scss"
 
-run();
+loadHeader()
