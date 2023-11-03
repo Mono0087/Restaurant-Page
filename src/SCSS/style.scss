@@ -38,8 +38,20 @@ a {
 }
 
 .btn {
-  border-radius: 10px;
+  background-color: $bg-main;
+  border-radius: 7px;
   padding: 10px;
+  transition: all 0.1s;
+  cursor: pointer;
+  border-right: 3px solid $border;
+  &:active {
+    border-right: 1px solid $border;
+    transform: translate(1px, 1px);
+  }
+  &:hover {
+    opacity: 1;
+    color: lighten($color: $main-color, $amount: 10);
+  }
 }
 
 #content {
@@ -58,7 +70,7 @@ header {
 
 h1 {
   color: #fff;
-  font-size: 28px;
+  font-size: 2.5rem;
   font-weight: 700;
 }
 
@@ -75,19 +87,32 @@ h1 {
 
 main {
   display: flex;
+  display: flex;
   justify-content: center;
+  h3,
+  h2 {
+    margin-bottom: 15px;
+  }
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+  h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
   > div {
+    border-radius: 7px;
     padding: 15px;
     background-color: $main-theme;
     color: #fff;
-    width: calc(min(65ch, 100vw - 2rem));
   }
   #home {
+    width: calc(min(65ch, 100vw - 2rem));
     position: relative;
     font-size: 1.2rem;
     font-weight: 400;
     padding: 15px;
-    text-align: center;
     .home_text-container {
       position: absolute;
       top: 0;
@@ -100,18 +125,42 @@ main {
       .text-content {
         font-size: 1.5rem;
         padding: 15px;
+        border-radius: 10px;
         width: calc(min(30ch, 100vw));
         display: flex;
         flex-direction: column;
         gap: 15px;
         background-color: rgba(0, 0, 0, 0.6);
-        h2{
-          font-size: 2rem;
-        }
       }
     }
     img {
       width: 100%;
+    }
+  }
+  #menu {
+    #dishes-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-rows: 260px;
+      gap: 15px;
+      .dish-card {
+        background-color: $bg-main;
+        color: $border;
+        border-radius: 7px;
+        border-bottom: $border solid;
+        border-right: $border solid;
+        cursor: pointer;
+        text-align: left;
+        img {
+          width: 100%;
+          height: 60%;
+          border-top-left-radius: 7px;
+          border-top-right-radius: 7px;
+        }
+        .card_text-content {
+          padding: 15px;
+        }
+      }
     }
   }
 }
