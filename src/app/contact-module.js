@@ -19,7 +19,7 @@ export function loadContactModule() {
     addressInfo.append(h3Address, address)
 
     const emailInfo = createElement('div', null, 'email-info')
-    const h3email = createElement('h3', null, null, 'email:')
+    const h3email = createElement('h3', null, null, 'Email:')
     const email = createElement('a', null, null, 'info@gastro-corner.com')
     email.href = 'mailto: info@gastro-corner.com'
     emailInfo.append(h3email, email)

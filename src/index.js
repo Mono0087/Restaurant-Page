@@ -7,15 +7,22 @@ import { loadContactModule } from "./app/contact-module"
 import "./SCSS/style.scss"
 
 loadHeader()
+const content = document.querySelector('#content')
 const main = createElement('main')
-const headerBtns = document.querySelector('.buttons-container')
-document.querySelector('#content').append(main)
+const headerBtns = content.querySelector('.buttons-container')
+content.append(main)
 loadHomeModule()
 
 headerBtns.addEventListener('click', btnsHandler)
 function btnsHandler(e) {
     if (e.target.nodeName === 'BUTTON') {
         let btnId = e.target.id
+        if (!e.target.classList.contains('btn-active')) {
+            [...headerBtns.children].forEach(child => {
+                child.classList.remove('btn-active')
+            })
+            e.target.classList.add('btn-active')
+        }
         switch (btnId) {
             case 'info-btn':
                 main.innerHTML = ''
